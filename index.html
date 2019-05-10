@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title></title>
+    <meta charset="utf-8">
+    <title>cal</title>
   </head>
   <body>
-    <!-- display -->
 
-    <!-- buttons and numbers-->
-    <div id="btns">
-    <button id="0" class="num_btn" onkeypress="key()" onclick="click()">0</button>
-    <button id="1" class="num_btn" onkeypress="key()" onclick="click()">1</button>
-    <button id="2" class="num_btn" onkeypress="key()" onclick="click()">2</button>
-    <button id="3" class="num_btn" onkeypress="key()" onclick="click()">3</button>
-    <button id="4" class="num_btn" onkeypress="key()" onclick="click()">4</button>
-    <button id="5" class="num_btn" onkeypress="key()" onclick="click()">5</button>
-    <button id="6" class="num_btn" onkeypress="key()" onclick="click()">6</button>
-    <button id="7" class="num_btn" onkeypress="key()" onclick="click()">7</button>
-    <button id="8" class="num_btn" onkeypress="key()" onclick="click()">8</button>
-    <button id="9" class="num_btn" onkeypress="key()" onclick="click()">9</button>
+    <!--display-->
+    <div id="display">
+      <p id="output"></p>
     </div>
-    <!-- end buttons -->
-    <script src="main.js"></script>
+    <!--buttons-->
+    <div id="upper_body">
+    <div id="btn_nums">
+    <button id="1" class="b_num" onclick="key(this)" value="1">1</button>
+    <button id="2" class="b_num" onclick="key(this)" value="2">2</button>
+    <button id="3" class="b_num" onclick="key(this)" value="3">3</button>
+    <button id="4" class="b_num" onclick="key(this)" value="4">4</button>
+    <button id="5" class="b_num" onclick="key(this)" value="5">5</button>
+    <button id="6" class="b_num" onclick="key(this)" value="6">6</button>
+    <button id="7" class="b_num" onclick="key(this)" value="7">7</button>
+    <button id="8" class="b_num" onclick="key(this)" value="8">8</button>
+    <button id="9" class="b_num" onclick="key(this)" value="9">9</button>
+    <button id="0" class="b_num" onclick="key(this)" value="0">0</button>
+    <button id="dot" class="b_num" onclick="key(this)" value=".">.</button>
+    <button id="equal" class="b_char equal" onclick="Calc()" value="=">&#61;</button>
+    <button id="plus" class="b_char plus" onclick="key(this)" value="+">&#43;</button>
+    <button id="minus" class="b_char minus" onclick="key(this)" value="-">&#8722;</button>
+    </div>
+
+    <div id="side_btn_chars">
+      <button id="clear" class="b_char" onclick="Clear()" value="clear">C</button>
+      <button id="plus" class="b_char" onclick="key(this)" value="+">&#43;</button>
+      <button id="plus" class="b_char" onclick="key(this)" value="+">&#43;</button>
+      <button id="plus" class="b_char" onclick="key(this)" value="+">&#43;</button>
+      <button id="plus" class="b_char" onclick="key(this)" value="+">&#43;</button>
+    </div>
+  </div>
+
+    <div id="btn_chars">
+
+    </div>
+    <!-- end buttons-->
+    <script src="js_files/main.js"></script>
+    <script src="js_files/calculations.js"></script>
+    <script src="js_files/validation.js"></script>
   </body>
 </html>
