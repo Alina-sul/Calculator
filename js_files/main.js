@@ -5,13 +5,24 @@ var count = 0;
 var double = undefined;
 var char;
 
-function Display(x){
+/* event */
+var btnClick = document.getElementById("btn_body");
+btnClick.addEventListener("click", function(){key(this)},false);
+console.log('event',btnClick);
+
+
+
+function display(x){
 	return document.getElementById('output').innerHTML = x;
 }
 
 function Clear(){
 		cur_num = pre_num = 0;
-		Display(cur_num);
+		display(cur_num);
+}
+
+function clickTest(){
+
 }
 
 function key(btn){
@@ -25,20 +36,20 @@ function key(btn){
 		if(cur_num === 0) {
 			if(value === '.'){
 				double = "0" + "" + ".";
-				Display(double);
+				display(double);
 			}
 			else if (double != undefined){
 					double = double + value;
-					Display(double);
+					display(double);
 				}
 			else {
 				output = value;
-		  	Display(output);
+		  	display(output);
 			}
 		}
 		else {
 			output = output + "" + value;
-			Display(output);
+			display(output);
 		}
 
 		cur_num = document.getElementById('output').innerHTML;
@@ -57,4 +68,4 @@ function key(btn){
 
 
 output = cur_num;
-Display(output);
+display(output);
