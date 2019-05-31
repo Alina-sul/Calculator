@@ -1,71 +1,88 @@
-var cur_num = 0;
-var pre_num = 0;
-var output = 0;
+var output = document.getElementById('output').innerHTML;
+var logOutput = document.getElementById('logOutput').innerHTML;
 var count = 0;
-var double = undefined;
-var char;
+var x = output.length;
+var y = logOutput.length;
 
-/* event */
-var btnClick = document.getElementById("btn_body");
-btnClick.addEventListener("click", function(){key(this)},false);
-console.log('event',btnClick);
-
-
-
-function display(x){
-	return document.getElementById('output').innerHTML = x;
+var btns = document.getElementsByTagName('button');
+for(var i = 0; i < btns.length; i++) {
+	btns.item(i).addEventListener('click',clickEvent,false);
 }
 
-function Clear(){
-		cur_num = pre_num = 0;
-		display(cur_num);
+function clickEvent(event){
+ let value = event.target.value;
+	switch (value) {
+		case '0':
+		case '1':
+		case '2':
+		case '3':
+		case '4':
+		case '5':
+		case '6':
+		case '7':
+		case '8':
+		case '9':
+			addNumber(value);
+			break;
+		case '+':
+		case '-':
+		case '*':
+		case '/':
+		case '**':
+			logOutput = logOutput + output;
+			addChar(value);
+			logOutput = logOutput + value;
+			console.log('out', output, 'log', logOutput);
+			break;
+		case '.':
+		case '=':
+			if(output !== ''){
+				output = eval(logOutput);
+				logOutput = '';
+			}
+			break;
+		case 'clear':
+			logOutput = output = '';
+			break;
+		case 'delete':
+			deleteBtn();
+			break;
+	}
+
+	//validityCheck(logOutput);
+	document.getElementById('output').innerHTML = output;
+	document.getElementById('logOutput').innerHTML = logOutput;
+
 }
 
-function clickTest(){
 
+
+function addNumber(x){
+	output = output + x;
+	return (output);
 }
 
-function key(btn){
-	var value = btn.value;
-	if(!isNaN(value) || value == '.'){
-		if(value === '.'){
+function deleteBtn(){
+	output = output.slice(0, x-1);
+	x = output.length;
+	return (output);
+}
+
+function addChar(x){
+	if(output != ''){
+		if(x === '.' && count === 0){
 			count++;
-			if(count > 1){SyntaxError();}
-		}
-
-		if(cur_num === 0) {
-			if(value === '.'){
-				double = "0" + "" + ".";
-				display(double);
-			}
-			else if (double != undefined){
-					double = double + value;
-					display(double);
-				}
-			else {
-				output = value;
-		  	display(output);
-			}
+			output = output + x;
+		 }
+		else if(x === '.' && count !== 0){
+			return;
 		}
 		else {
-			output = output + "" + value;
-			display(output);
+			count = 0;
+			output = '';
 		}
-
-		cur_num = document.getElementById('output').innerHTML;
-		cur_num = Number(cur_num);
+		return (output);
 	}
-	else {
-		char = btn.value;
-		console.log(char);
-		pre_num = cur_num;
-		cur_num = 0;
-	}
+	else {return;}
 
-		console.log(cur_num);console.log(pre_num);
 }
-
-
-
-output = cur_num;
-display(output);

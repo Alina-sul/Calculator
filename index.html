@@ -8,39 +8,45 @@
   <body>
 
     <!--display-->
+    <div id="log">
+      <p id="logOutput"></p>
+    </div>
     <div id="display">
       <p id="output"></p>
     </div>
     <!--buttons-->
-<div id="btn_body">
+    <div id="upper_body">
     <div id="btn_nums">
-    <button id="1" class="b_num" onclick="key(this)" value="1">1</button>
-    <button id="2" class="b_num" onclick="key(this)" value="2">2</button>
-    <button id="3" class="b_num" onclick="key(this)" value="3">3</button>
-    <button id="4" class="b_num" onclick="key(this)" value="4">4</button>
-    <button id="5" class="b_num" onclick="key(this)" value="5">5</button>
-    <button id="6" class="b_num" onclick="key(this)" value="6">6</button>
-    <button id="7" class="b_num" onclick="key(this)" value="7">7</button>
-    <button id="8" class="b_num" onclick="key(this)" value="8">8</button>
-    <button id="9" class="b_num" onclick="key(this)" value="9">9</button>
-    <button id="0" class="b_num" onclick="key(this)" value="0">0</button>
-    <button id="dot" class="b_num" onclick="key(this)" value=".">.</button>
-    <button id="equal" class="b_char equal" onclick="Calc()" value="=">&#61;</button>
-    <button id="plus" class="b_char plus" onclick="key(this)" value="+">&#43;</button>
-    <button id="minus" class="b_char minus" onclick="key(this)" value="-">&#8722;</button>
+    <button id="1" class="b_num" value="1">1</button>
+    <button id="2" class="b_num" value="2">2</button>
+    <button id="3" class="b_num" value="3">3</button>
+    <button id="4" class="b_num" value="4">4</button>
+    <button id="5" class="b_num" value="5">5</button>
+    <button id="6" class="b_num" value="6">6</button>
+    <button id="7" class="b_num" value="7">7</button>
+    <button id="8" class="b_num" value="8">8</button>
+    <button id="9" class="b_num" value="9">9</button>
+    <button id="0" class="b_num" value="0">0</button>
+    <button id="dot" class="b_num" value=".">.</button>
+    <button id="equal" class="b_char equal" value="=">&#61;</button>
+    <button id="plus" class="b_char plus" value="+">&#43;</button>
+    <button id="minus" class="b_char minus" value="-">&#8722;</button>
     </div>
 
     <div id="side_btn_chars">
-      <button id="clear" class="b_char" onclick="Clear()" value="clear">C</button>
-      <button id="plus" class="b_char" onclick="key(this)" value="+">&#43;</button>
-      <button id="plus" class="b_char" onclick="key(this)" value="+">&#43;</button>
-      <button id="plus" class="b_char" onclick="key(this)" value="+">&#43;</button>
-      <button id="plus" class="b_char" onclick="key(this)" value="+">&#43;</button>
+      <button id="clear" class="b_char" value="clear">C</button>
+      <button id="delete" class="b_char" value="delete">&#8592;</button>
+      <button id="multi" class="b_char" value="*">&#215;</button>
+      <button id="division" class="b_char" value="/">&#247;</button>
+      <button id="sqrt" class="b_char" value="**">^</button>
     </div>
-</div>
+  </div>
+
+    <div id="btn_chars">
+
+    </div>
     <!-- end buttons-->
     <script src="js_files/main.js"></script>
-    <script src="js_files/calculations.js"></script>
-    <script src="js_files/validation.js"></script>
+    <script src="js_files/validations.js"></script>
   </body>
 </html>
