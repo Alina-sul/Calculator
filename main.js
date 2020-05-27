@@ -29,12 +29,10 @@ function clickEvent(event){
 		case '*':
 		case '/':
 		case '**':
-			logOutput = logOutput + output;
+		case '.':
 			addChar(value);
-			logOutput = logOutput + value;
 			console.log('out', output, 'log', logOutput);
 			break;
-		case '.':
 		case '=':
 			if(output !== ''){
 				output = eval(logOutput);
@@ -43,6 +41,7 @@ function clickEvent(event){
 			break;
 		case 'clear':
 			logOutput = output = '';
+			count = 0;
 			break;
 		case 'delete':
 			deleteBtn();
@@ -56,28 +55,30 @@ function clickEvent(event){
 }
 
 
-
 function addNumber(x){
 	output = output + x;
+	logOutput = logOutput + x;
 	return (output);
 }
 
 function deleteBtn(){
 	output = output.slice(0, x-1);
+	logOutput = logOutput.slice(0, logOutput.length-1);
 	x = output.length;
-	return (output);
 }
 
 function addChar(x){
-	if(output != ''){
+	if(output !== ''){
 		if(x === '.' && count === 0){
 			count++;
 			output = output + x;
+			logOutput = logOutput + x;
 		 }
 		else if(x === '.' && count !== 0){
 			return;
 		}
 		else {
+			logOutput = logOutput + x;
 			count = 0;
 			output = '';
 		}
