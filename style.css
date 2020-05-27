@@ -6,7 +6,7 @@
 #side_btn_chars {width:71px;}
 #upper_body {display:flex; position: relative;}
 #display {margin:5px;width:283px;background-color:#cacaca;height:80px;}
-#output {font-family:monospace;padding:30px 5px 0px 0px;;margin:0;text-align:right;font-size:40px;color:black;}
+#output {overflow: hidden;margin: 5px;font-family:monospace;padding:30px 5px 0px 0px;text-align:right;font-size:40px;color:black;}
 #log {height:40px;; background-color: #3e3e3e; margin:5px;width:283px;}
 #logOutput {letter-spacing: 1px;font-size: 20px;color: white;padding: 8px;margin: 0;font-family: monospace;}
 .equal {height:130px; position: absolute; background-color:#ff6c00;left: 148px;}
